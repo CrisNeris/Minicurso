@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(
+   ackground-image: linear-gradient(
         180deg,
         #6495ED 5%,
         #00FFFF 20%,
@@ -8,5 +8,13 @@ body {
     );
     margin: 0;
     min-height: 100vh;
-    width: 100%;
+    width: 100%; b
+}
+
+main {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
 }

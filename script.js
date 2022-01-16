@@ -89,7 +89,6 @@ pegarPersonagem();
 pegarPersonagem1();
 pegarPersonagem2();
 }
-
 botao.onclick = pegarTodos;
 
 

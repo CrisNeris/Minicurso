@@ -47,7 +47,9 @@ pegarPersonagem = () => {
         });
     }
 
-
+gerarValorAletorio1 = () => {
+    return Math.floor(Math.random() * 671);
+}
 pegarPersonagem1 = () => {
     let numeroAleatorio1 = gerarValorAletorio1();
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio1}`, {
@@ -56,29 +58,17 @@ pegarPersonagem1 = () => {
             Accept: 'application/json',
             "Content-type": 'application/json'
         }
-    }).then((response1) => response1.json()).then((data1) => {
-        imagem1.src = data1.image;
-        imagem1.alt = data1.name;
-        nomeDoPersonagem1.innerHTML = data1.name;
-        especie1.innerHTML = data1.species;
-        condicao1.innerHTML = traduzirCondicao1(data1);
+    }).then((response) => response.json()).then((data) => {
+        imagem1.src = data.image;
+        imagem1.alt = data.name;
+        nomeDoPersonagem1.innerHTML = data.name;
+        especie1.innerHTML = data.species;
+        condicao1.innerHTML = traduzirCondicao1(data);
     });
 }
-
-traduzirCondicao1 = (data1) => {
-    if(data1.status1 == 'unknown'){
-        return 'Não sabemos';
-    }else if(data1.status1 == 'Alive'){
-        return 'Sim';
-    }else {
-        return 'Não. Está morto';
-    }
-}
-
-gerarValorAletorio1 = () => {
+gerarValorAletorio2 = () => {
     return Math.floor(Math.random() * 671);
 }
-
 pegarPersonagem2 = () => {
     let numeroAleatorio2 = gerarValorAletorio2();
     return fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio2}`, {
@@ -87,29 +77,14 @@ pegarPersonagem2 = () => {
             Accept: 'application/json',
             "Content-type": 'application/json'
         }
-    }).then((response2) => response2.json()).then((data2) => {
-        imagem2.src = data2.image;
-        imagem2.alt = data2.name;
-        nomeDoPersonagem2.innerHTML = data2.name;
-        especie2.innerHTML = data2.species;
-        condicao2.innerHTML = traduzirCondicao2(data2);
+    }).then((response) => response.json()).then((data) => {
+        imagem2.src = data.image;
+        imagem2.alt = data.name;
+        nomeDoPersonagem2.innerHTML = data.name;
+        especie2.innerHTML = data.species;
+        condicao2.innerHTML = traduzirCondicao(data);
     });
 }
-
-traduzirCondicao2 = (data2) => {
-    if(data2.status2 == 'unknown'){
-        return 'Não sabemos';
-    }else if(data2.status2 == 'Alive'){
-        return 'Sim';
-    }else {
-        return 'Não. Está morto';
-    }
-}
-
-gerarValorAletorio2 = () => {
-    return Math.floor(Math.random() * 671);
-}
-
 pegarPersonagem();
 pegarPersonagem1();
 pegarPersonagem2();

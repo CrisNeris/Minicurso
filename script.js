@@ -63,7 +63,7 @@ pegarPersonagem1 = () => {
         imagem1.alt = data.name;
         nomeDoPersonagem1.innerHTML = data.name;
         especie1.innerHTML = data.species;
-        condicao1.innerHTML = traduzirCondicao1(data);
+        condicao1.innerHTML = traduzirCondicao(data);
     });
 }
 gerarValorAletorio2 = () => {
